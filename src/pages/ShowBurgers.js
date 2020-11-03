@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 
 import burgers from '../data/burgers.json'
-import { Burger } from './components/Burger'
+import { Burger } from '../components/Burger'
 
 export const ShowBurger = () => {
   const params = useParams()

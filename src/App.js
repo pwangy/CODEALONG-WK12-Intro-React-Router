@@ -5,6 +5,8 @@ import { Welcome } from './Welcome'
 import { About } from './About'
 import { Contact } from './Contact'
 import { Nav } from './Nav'
+import { BurgerList } from './pages/BurgerList'
+import { ShowBurger } from './pages/ShowBurgers'
 
 export const App = () => {
   return (
@@ -21,6 +23,12 @@ export const App = () => {
           </Route>
           <Route path="/about" exact>
             <About />
+          </Route>
+          <Route path="/burgers" exact>
+            <BurgerList />
+          </Route>
+          <Route path="/burgers/:slug" exact>
+            <ShowBurger />
           </Route>
         </Switch>
       </main>

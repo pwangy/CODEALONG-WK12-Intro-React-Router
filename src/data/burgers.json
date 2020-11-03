@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Animal",
+    "id": "animal",
+    "slug": "animal-burger"
+  },
+  {
+    "name": "Cheese",
+    "id": "cheese",
+    "slug": "cheese-burger"
+  },
+  {
+    "name": "Veggie",
+    "id": "veggie",
+    "slug": "veggie-burger"
+  }
+]

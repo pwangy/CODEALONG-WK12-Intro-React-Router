@@ -1,17 +1,29 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 
 import burgers from '../data/burgers.json'
 import { Burger } from '../components/Burger'
 
 export const ShowBurger = () => {
-  const params = useParams()
-  const burgerMatch = burgers.find((burger) => burger.slug === params.slug)
+  const { slug } = useParams()
+  // const { params } = useParams()
+  const history = useHistory()
+  const burgerMatch = burgers.find((burger) => burger.slug === slug)
+  // const burgerMatch = burgers.find((burger) => burger.slug === params.slug)
+
   console.log(burgerMatch)
+
+  if (!burgerMatch) {
+    history.push('/burgers')
+    // return (
+    //   <div>Not found!</div>
+    // )
+  }
 
   return (
     <div className="orderPage">
-      <Burger name={burgerMatch.name} />
+      <Burger {...burgerMatch} />
+      {/* <Burger name={burgerMatch.name} />  */}
       <div>
         <button type="button">
           Order me!
@@ -20,3 +32,5 @@ export const ShowBurger = () => {
     </div>
   )
 }
+
+// individual burger page where user can order.
